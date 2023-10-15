@@ -1,0 +1,35 @@
+latest> db.database
+latest.database
+latest> db.database.find()
+[
+  {
+    _id: ObjectId("65250c09ad8cae013968a363"),
+    name: 'Avitosh',
+    age: 20,
+    hobbies: [ 'streams', 'stargazing', 'football' ]
+  },
+  {
+    _id: ObjectId("65250c1fad8cae013968a364"),
+    name: 'speed',
+    age: 19,
+    idcards: { adharcard: true, pancard: false },
+    hobbies: [ 'streams', 'stargazing', 'football' ]
+  }
+]
+latest> db.database.find({age:19})
+[
+  {
+    _id: ObjectId("65250c1fad8cae013968a364"),
+    name: 'speed',
+    age: 19,
+    idcards: { adharcard: true, pancard: false },
+    hobbies: [ 'streams', 'stargazing', 'football' ]
+  }
+]
+latest> db.database.findOne({name:'Avitosh'})
+{
+  _id: ObjectId("65250c09ad8cae013968a363"),
+  name: 'Avitosh',
+  age: 20,
+  hobbies: [ 'streams', 'stargazing', 'football' ]
+}
