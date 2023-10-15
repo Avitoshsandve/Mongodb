@@ -1,0 +1,11 @@
+latest> use latest db
+already on db latest
+latest> db.student.insertOne({name:"Avitosh",age:20})
+{
+  acknowledged: true,
+  insertedId: ObjectId("65245778ad8cae013968a361")
+}
+latest> db.student.insertOne({name:"speed", age:19})
+{
+  acknowledged: true,
+  insertedId: ObjectId("652457afad8cae013968a362")
