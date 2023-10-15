@@ -1,0 +1,8 @@
+latest> db.database.find()
+[
+  {
+    _id: ObjectId("65250c09ad8cae013968a363"),
+    name: 'Avitosh',
+    age: 20
+  },
+  { _id: ObjectId("65250c1fad8cae013968a364"), name: 'speed', age: 19 }
