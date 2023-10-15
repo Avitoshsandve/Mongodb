@@ -1,0 +1,67 @@
+latest> db.student.find()
+[
+  { _id: ObjectId("652456a6ad8cae013968a360"), name: 'Avito', age: 20 },
+  {
+    _id: ObjectId("65245778ad8cae013968a361"),
+    name: 'Avitosh',
+    age: 20
+  },
+  {
+    _id: ObjectId("652457afad8cae013968a362"),
+    name: 'speed',
+    age: 19
+  }
+]
+latest> db.student.updateMany({age:19},{$set:{iseligible:false}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+latest> db.student.find()
+[
+  { _id: ObjectId("652456a6ad8cae013968a360"), name: 'Avito', age: 20 },
+  {
+    _id: ObjectId("65245778ad8cae013968a361"),
+    name: 'Avitosh',
+    age: 20
+  },
+  {
+    _id: ObjectId("652457afad8cae013968a362"),
+    name: 'Kunjuu',
+    age: 19,
+    iseligible: false
+  }
+]
+
+latest> db.student.updateMany({age:{$gte:18}},{$set:{iseligible:true}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 3,
+  modifiedCount: 3,
+  upsertedCount: 0
+}
+latest> db.student.find()
+[
+  {
+    _id: ObjectId("652456a6ad8cae013968a360"),
+    name: 'Avito',
+    age: 20,
+    iseligible: true
+  },
+  {
+    _id: ObjectId("65245778ad8cae013968a361"),
+    name: 'Avitosh',
+    age: 20,
+    iseligible: true
+  },
+  {
+    _id: ObjectId("652457afad8cae013968a362"),
+    name: 'Kunjuu',
+    age: 19,
+    iseligible: true
+  }
+]
