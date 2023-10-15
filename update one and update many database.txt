@@ -1,0 +1,54 @@
+]
+latest> db.database.updateOne({name:"speed"},{$set:{idcards:{adharcard:true,pancard:false}}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+latest> db.database.findOne({name:"speed"})
+{
+  _id: ObjectId("65250c1fad8cae013968a364"),
+  name: 'speed',
+  age: 19,
+  idcards: { adharcard: true, pancard: false }
+}
+latest> db.database.updateMany({},{set:{hobbies:['streams','stargazing','football']}})
+MongoInvalidArgumentError: Update document requires atomic operators
+latest> db.database.updateMany({},{$set:{hobbies:['streams','stargazing','football']}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 2,
+  modifiedCount: 2,
+  upsertedCount: 0
+}
+latest> db.database.find()
+[
+  {
+    _id: ObjectId("65250c09ad8cae013968a363"),
+    name: 'Avitosh',
+    age: 20,
+    hobbies: [ 'streams', 'stargazing', 'football' ]
+  },
+  {
+    _id: ObjectId("65250c1fad8cae013968a364"),
+    name: 'speed',
+    age: 19,
+    idcards: { adharcard: true, pancard: false },
+    hobbies: [ 'streams', 'stargazing', 'football' ]
+  }
+]
+latest> db.database.find({hobbies:'football'}).count()
+2
+latest> db.database.find({'idcards.adharcard' :true})
+[
+  {
+    _id: ObjectId("65250c1fad8cae013968a364"),
+    name: 'speed',
+    age: 19,
+    idcards: { adharcard: true, pancard: false },
+    hobbies: [ 'streams', 'stargazing', 'football' ]
+  }
+]
