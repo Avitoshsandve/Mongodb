@@ -1,0 +1,18 @@
+amazon> db.CompanyData.insertOne({name:"Amazon",ispaying:true,paying:100000, employees:[{name:"Avitosh",age:19.5},{name:"speed",age:18.9}],metOn:new Date(),metOnTimestamp:new Timestamp()})
+{
+  acknowledged: true,
+  insertedId: ObjectId("652d8e39f7a0ac3fe297d480")
+}
+amazon> db.companyData.find()
+
+amazon>
+[
+  {
+    _id: ObjectId("652d8e39f7a0ac3fe297d480"),
+    name: 'Amazon',
+    ispaying: true,
+    paying: 100000,
+    employees: [ { name: 'Avitosh', age: 19.5 }, { name: 'speed', age: 18.9 } ],
+    metOn: ISODate("2023-10-16T19:25:45.328Z"),
+    metOnTimestamp: Timestamp({ t: 1697484345, i: 1 })
+  }
