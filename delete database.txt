@@ -1,0 +1,29 @@
+
+latest> db.student.deleteOne({age:19})
+{ acknowledged: true, deletedCount: 1 }
+latest> db.student.find()
+[
+  {
+    _id: ObjectId("652456a6ad8cae013968a360"),
+    name: 'Avito',
+    age: 20,
+    iseligible: true
+  },
+  {
+    _id: ObjectId("65245778ad8cae013968a361"),
+    name: 'Avitosh',
+    age: 20,
+    iseligible: true
+  }
+]
+latest> db.student.deleteOne({name:"Avito"})
+{ acknowledged: true, deletedCount: 1 }
+latest> db.student.find()
+[
+  {
+    _id: ObjectId("65245778ad8cae013968a361"),
+    name: 'Avitosh',
+    age: 20,
+    iseligible: true
+  }
+]
