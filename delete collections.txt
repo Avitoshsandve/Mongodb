@@ -1,0 +1,10 @@
+mtdb> db.product.insert({name:"laptop",price:100})
+DeprecationWarning: Collection.insert() is deprecated. Use insertOne, insertMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("653421b3f7a0ac3fe297d481") }
+}
+mtdb> show collections
+product
+mtdb> db.dropDatabase()
+{ ok: 1, dropped: 'mtdb' }
